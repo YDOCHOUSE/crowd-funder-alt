@@ -1,4 +1,4 @@
-<h1>Create New Project</h1>
+<%= @project.name %>
 
 <%= form_for @project do |f| %>
 	<div>
@@ -22,6 +22,7 @@
 		<%= f.text_field :end_date %>
 	</div>
 
-	<%= f.submit "Create your project!" %>
+	<%= f.submit "Save Changes" %>
+	<%= link_to "Back", project_path(@project) %>
 
 <% end %>

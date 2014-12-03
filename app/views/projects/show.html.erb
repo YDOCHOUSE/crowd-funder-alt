@@ -1,1 +1,5 @@
 <%= @project.name %>
+<%= link_to "Edit Project", edit_project_path(@project.id) %> <br>
+
+<p> Description: <%= @project.description %> </p><br>
+<p> Funding goal: $<%= @project.funding_goal %> </p>
