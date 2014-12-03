@@ -1,0 +1,28 @@
+<%= @project.name %>
+
+<%= form_for @project do |f| %>
+	<div>
+		<%= f.label :name, 'Give your project a name: ' %>
+		<%= f.text_field :name %>
+	</div>
+	<div>
+		<%= f.label :description, "What's your project about? " %>
+		<%= f.text_area :description %>
+	</div>
+	<div>
+		<%= f.label :funding_goal, "What's your projects funding goal? " %>
+		<%= f.text_field :funding_goal %>
+	</div>
+	<div>
+		<%= f.label :start_date, "When should the crowd funding start? " %>
+		<%= f.text_field :start_date %>
+	</div>
+	<div>
+		<%= f.label :end_date, "When should the crowd funding end? " %>
+		<%= f.text_field :end_date %>
+	</div>
+
+	<%= f.submit "Save Changes" %>
+	<%= link_to "Back", project_path(@project) %>
+
+<% end %>

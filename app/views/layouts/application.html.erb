@@ -9,8 +9,11 @@
 <body>
 
   <div id="nav">
+    <%= link_to "Projects", projects_path %>
     <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Create Project", new_project_path %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %><br>
+      <%= "Signed in as: #{current_user.first_name}" %>
       <%= link_to "Logout", :logout, method: :post %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
