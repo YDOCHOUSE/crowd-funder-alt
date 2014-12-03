@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
 
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true,
+            format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
 end
