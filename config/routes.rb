@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
   
 
+  get 'rewards/create'
+
+  get 'rewards/new'
+
+  get 'rewards/index'
+
+  get 'rewards/edit'
+
+  get 'rewards/update'
+
+  get 'rewards/destroy'
+
   root :to => 'users#index'
   resources :user_sessions
   resources :users

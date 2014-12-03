@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'cancancan', '~>1.9'
+gem 'cocoon', '>= 1.2.0'
 
 group :development do
   gem "better_errors"
@@ -45,3 +46,4 @@ gem 'sorcery'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pry-rails'

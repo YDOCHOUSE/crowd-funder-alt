@@ -22,6 +22,28 @@
 		<%= f.text_field :end_date %>
 	</div>
 
+	<%= f.fields_for :rewards do |reward_fields| %>
+		<%= render 'reward_fields', f: reward_fields %>
+	<% end %>
+	<%= link_to_add_association "Add reward", f, :rewards %>
+
 	<%= f.submit "Create your project!" %>
 
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

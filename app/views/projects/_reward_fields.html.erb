@@ -1,0 +1,16 @@
+<div class="nested-fields">
+	<div>
+		<%= f.label :amount, "Pledge Amount: " %>
+		<%= f.text_field :amount %>
+	</div>
+	<div>
+		<%= f.label :backer_limit, "Backer Limit: " %>
+		<%= f.text_field :backer_limit %>
+	</div>
+	<div>
+		<%= f.label :description, "Description: " %>
+		<%= f.text_area :description %>
+	</div>
+
+	<%= link_to_remove_association "remove reward", f %>
+</div>
