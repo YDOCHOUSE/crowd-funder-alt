@@ -1,5 +1,16 @@
 <%= @project.name %>
 <%= link_to "Edit Project", edit_project_path(@project.id) %> <br>
 
-<p> Description: <%= @project.description %> </p><br>
+<p> Description: <%= @project.description %> </p>
 <p> Funding goal: $<%= @project.funding_goal %> </p>
+
+
+<h2>Rewards</h2>
+<% @project.rewards do |reward| %>
+	<div>
+		<%= reward.amount %>
+	</div>
+	<div>
+		<%= reward.description %>
+	</div>
+<% end %>
