@@ -25,7 +25,6 @@ class ProjectsController < ApplicationController
   def edit
   	@project = Project.find(params[:id])
   end
-
   def update
   	@project = Project.find(params[:id])
 
@@ -45,7 +44,9 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-  	params.require(:project).permit(:name, :funding_goal, :description, :start_date, :end_date, :owner_id, reward_form: [:amount, :backer_limit, :description])
+  	params.require(:project).permit(:name, :funding_goal, :description, 
+                                    :start_date, :end_date, :owner_id, 
+                                    rewards_attributes: [:amount, :backer_limit, :description])
   end
 end
 
