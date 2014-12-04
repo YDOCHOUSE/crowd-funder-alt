@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 gem 'sorcery'
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem 'awesome_print'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
