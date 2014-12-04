@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  helper_method :days_left
+
   def index
     @projects = Project.all
   end
@@ -42,6 +44,11 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def days_left
+    days = (@project.end_date - @project.start_date)
+    (days / 86400).round
+  end
 
   def project_params
   	params.require(:project).permit(:name, :funding_goal, :description, 
