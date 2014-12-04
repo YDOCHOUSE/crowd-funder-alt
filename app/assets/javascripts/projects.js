@@ -1,0 +1,26 @@
+// # Place all the behaviors and hooks related to the matching controller here.
+// # All this logic will automatically be available in application.js.
+// # You can use CoffeeScript in this file: http://coffeescript.org/
+
+
+$(document).ready(function(){
+	
+	$('#reward').on('click', function() {
+		console.log("I was clicked");
+	});
+
+});
+
+
+	$('#search-form').submit(function(event) {
+	    event.preventDefault();
+	    var searchValue = $('#search').val();
+
+		$.getScript('/products?search=' + searchValue);
+		
+	});
+
+
+
+
+

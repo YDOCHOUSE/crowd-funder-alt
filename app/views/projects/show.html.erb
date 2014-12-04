@@ -4,13 +4,14 @@
 <p> Description: <%= @project.description %> </p>
 <p> Funding goal: $<%= @project.funding_goal %> </p>
 
-
 <h2>Rewards</h2>
-<% @project.rewards do |reward| %>
-	<div>
-		<%= reward.amount %>
-	</div>
-	<div>
-		<%= reward.description %>
+<% @project.rewards.each do |reward| %>
+	<div id="reward">
+		<div>
+			<p> For $<%= reward.amount %> </p>
+		</div>
+		<div>
+			<p> You get: <%= reward.description %> </p>
+		</div>
 	</div>
 <% end %>
