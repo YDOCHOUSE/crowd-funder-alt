@@ -13,6 +13,7 @@ class Ability
     
     user ||= User.new
     can :edit, Project, :owner_id => user.id
+    can :update, Project, :owner_id => user.id
     
 
     # The first argument to `can` is the action you are giving the user
