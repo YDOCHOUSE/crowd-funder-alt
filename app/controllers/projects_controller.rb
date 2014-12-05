@@ -11,12 +11,11 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    # @project.rewards.new
   end
 
   def create
     @project = Project.new(project_params)
-
+    @project.owner = current_user
     if @project.save
       redirect_to project_path(@project.id)
     else
@@ -27,9 +26,9 @@ class ProjectsController < ApplicationController
   def edit
   	@project = Project.find(params[:id])
   end
+  
   def update
   	@project = Project.find(params[:id])
-
   	if @project.update(project_params)
   		redirect_to project_path(@project)
   	else
@@ -52,8 +51,8 @@ class ProjectsController < ApplicationController
 
   def project_params
   	params.require(:project).permit(:name, :funding_goal, :description, 
-                                    :start_date, :end_date, :owner_id, 
-                                    rewards_attributes: [:amount, :backer_limit, :description])
+                                    :start_date, :end_date,
+                                    rewards_attributes: [:id, :amount, :backer_limit, :description, :_destroy])
   end
 end
 
