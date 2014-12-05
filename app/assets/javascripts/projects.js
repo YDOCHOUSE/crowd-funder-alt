@@ -6,15 +6,23 @@
 $(document).ready(function(){
 	
 	$('.reward').on('click', function() {
-		console.log("I was clicked");
 		var reward_amount = $(this).data('reward-amount');
 		var project_id = $(this).data('project-id');
 		$.ajax({
 			url: '/pledges',
 			type: 'POST',
 			dataType: 'script',
-			data: { pledge: {amount: reward_amount, project_id: project_id }}
+			data: { pledge: {amount: reward_amount, project_id: project_id }},
+			success: function(data, textStatus, request) {
+				$('#pledge_response').html(request.getResponseHeader('X-message'));
+
+			}
+		}).done(function() {
+			setTimeout(function(){
+				$('#pledge_response').fadeOut('fast');
+			}, 3000);
 		});
+		;
 	});
 
 });

@@ -1,6 +1,6 @@
 <%= @project.name %>
 <%= link_to "Edit Project", edit_project_path(@project.id) %> <br>
-
+<div id="pledge_response"></div>
 <p> Description: <%= @project.description %> </p>
 <p> Funding goal: $<%= @project.funding_goal %> </p>
 <p> Days Left: <%= days_left %> </p>
