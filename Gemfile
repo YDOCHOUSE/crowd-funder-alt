@@ -6,6 +6,8 @@ gem 'cocoon', '>= 1.2.0'
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+  gem "quiet_assets"
+  gem "awesome_print"
 end
 
 
@@ -39,6 +41,7 @@ gem 'spring',        group: :development
 gem 'sorcery'
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

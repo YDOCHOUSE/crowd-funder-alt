@@ -4,6 +4,7 @@
 <p> Description: <%= @project.description %> </p>
 <p> Funding goal: $<%= @project.funding_goal %> </p>
 <p> Days Left: <%= days_left %> </p>
+<p> Category: <%= @project.category.try(:name) %></p>
 
 <h2>Rewards</h2>
 <% @project.rewards.each do |reward| %>
@@ -17,3 +18,4 @@
 		</div>
 	</div>
 <% end %>
+
