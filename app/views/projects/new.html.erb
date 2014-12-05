@@ -1,6 +1,8 @@
 <h1>Create New Project</h1>
 
 <%= form_for @project do |f| %>
+	
+
 	<div>
 		<%= f.label :name, 'Give your project a name: ' %>
 		<%= f.text_field :name %>
@@ -11,7 +13,7 @@
 	</div>
 	<div>
 		<%= f.label :funding_goal, "What's your projects funding goal? " %>
-		<%= f.text_field :funding_goal %>
+		<%= f.number_field :funding_goal %>
 	</div>
 	<div>
 		<%= f.label :start_date, "When should the crowd funding start? " %>
