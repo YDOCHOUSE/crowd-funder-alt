@@ -26,9 +26,9 @@ class ProjectsController < ApplicationController
   def edit
   	@project = Project.find(params[:id])
   end
+  
   def update
   	@project = Project.find(params[:id])
-
   	if @project.update(project_params)
   		redirect_to project_path(@project)
   	else
@@ -52,8 +52,7 @@ class ProjectsController < ApplicationController
   def project_params
   	params.require(:project).permit(:name, :funding_goal, :description, 
                                     :start_date, :end_date,
-                                    rewards_attributes: [:amount, :backer_limit, :description])
-    # params[:project][:user_id] = current_user.id
+                                    rewards_attributes: [:id, :amount, :backer_limit, :description, :_destroy])
   end
 end
 

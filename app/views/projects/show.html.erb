@@ -7,9 +7,10 @@
 
 <h2>Rewards</h2>
 <% @project.rewards.each do |reward| %>
-	<div id="reward">
+
+	<div class="reward" data-reward-amount="<%= reward.amount %>" data-project-id="<%= @project.id %>">
 		<div>
-			<p> For $<%= reward.amount %> </p>
+			<p> For $<%= reward.amount %></span> </p>
 		</div>
 		<div>
 			<p> You get: <%= reward.description %> </p>
