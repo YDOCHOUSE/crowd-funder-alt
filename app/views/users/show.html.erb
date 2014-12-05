@@ -17,3 +17,29 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<h1>Projects You've Started</h1>
+
+<% @user.owned_projects.each do |project| %>
+	<div>
+		<%= project.name %>
+	</div>
+
+	<div>
+		<%= link_to 'Check it out', project_path(project) %>
+	</div>
+<% end %>
+
+
+
+<h1>Your Pledges</h1>
+
+<% @user.backed_projects.each do |project| %>
+	<div>
+		<%= project.name %>
+	</div>
+
+	<div>
+		<%= link_to 'Check it out', project_path(project) %>
+	</div>
+<% end %>
