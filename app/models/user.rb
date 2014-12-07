@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  acts_as_ordered_taggable
+  acts_as_ordered_taggable_on :interests
+  scope :by_join_date, order("created_at DESC")
   authenticates_with_sorcery!
 
   validates :password, length: {minimum: 4}

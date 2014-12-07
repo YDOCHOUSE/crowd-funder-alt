@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+
   end
 
   def new
@@ -45,6 +46,7 @@ class ProjectsController < ApplicationController
   def destroy
   end
 
+
   private
 
   def days_left
@@ -53,9 +55,10 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-  	params.require(:project).permit(:name, :funding_goal, :description, 
-                                    :start_date, :end_date,
+  	params.require(:project).permit(:name, :funding_goal, :description,
+                                    :start_date, :end_date, :category_id,
                                     rewards_attributes: [:id, :amount, :backer_limit, :description, :_destroy])
+
   end
 end
 

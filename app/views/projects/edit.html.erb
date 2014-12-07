@@ -22,6 +22,10 @@
 		<%= f.date_field :end_date %>
 	</div>
 	<div>
+		<%= f.label "Category", "What category does this belong to?" %>
+		<%= f.collection_select :category_id, Category.all, :id, :name  %>
+	</div>
+	<div>
 		<%= f.fields_for :rewards do |reward_fields| %>
 			<%= render 'reward_fields', f: reward_fields %>
 		<% end %>
